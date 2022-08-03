@@ -1,0 +1,26 @@
+{
+  "name": "render-jsx",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".babelrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel main.js component.js render.js template.js logic.js -d ./dist",
+    "dev": "babel  main.js component.js render.js template.js logic.js -d ./dist --watch",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/preset-react": "^7.18.6",
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "http-server": "^14.1.1",
+    "react-jsx": "^1.0.0"
+  }
+}
