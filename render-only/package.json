@@ -5,8 +5,9 @@
   "main": ".babelrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel main.js logic.js -d ./dist",
-    "dev": "babel  main.js logic.js -d ./dist --watch"
+    "build": "babel main.js    logic.js -d ./dist",
+    "dev": "babel  main.js  logic.js -d ./dist --watch",
+    "start": "http-server -a 0.0.0.0 -p 8000"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "http-server": "^14.1.1",
     "react-jsx": "^1.0.0"
   }
 }

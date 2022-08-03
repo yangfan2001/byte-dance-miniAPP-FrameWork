@@ -137,12 +137,21 @@ function isRefAttr(key, value) {
   return key === 'ref' && typeof value === 'function';
 }
 
+import { useWorker } from "./logic.js";
+
 const setAttribute = (dom, key, value) => {
+  console.log(value, typeof value);
+
   if (isEventListenerAttr(key, value)) {
+    // if the user want to use a function (the function is running in the WebWorker)
+    const new_func = () => {
+      value();
+    };
+
     const eventType = key.slice(2).toLowerCase();
     dom.__handlers = dom.__handlers || {};
     dom.removeEventListener(eventType, dom.__handlers[eventType]);
-    dom.__handlers[eventType] = value;
+    dom.__handlers[eventType] = new_func;
     dom.addEventListener(eventType, dom.__handlers[eventType]);
   } else if (key == 'checked' || key == 'value' || key == 'className') {
     dom[key] = value;
@@ -157,7 +166,6 @@ const setAttribute = (dom, key, value) => {
   }
 };
 
-export let handlerMap = [];
 export const createElement = (type, props, ...children) => {
   if (props === null) props = {};
   return {

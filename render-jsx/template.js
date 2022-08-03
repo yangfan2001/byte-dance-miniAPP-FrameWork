@@ -29,3 +29,35 @@ class Demo extends Component{
 }
 
 render(<Demo/>, document.getElementById('app'));
+
+
+
+function Item(props) {
+    return <li className="item" style={props.style} onClick={props.onClick}>{props.children}</li>;
+}
+
+function List(props) {
+    return <ul className="list">
+        {props.list.map((item, index) => {
+            return <Item style={{ background: item.color }} onClick={() => alert(item.text)}>{item.text}</Item>
+        })}
+    </ul>;
+}
+
+const list = [
+    {
+        text: 'aaa',
+        color: 'blue'
+    },
+    {
+        text: 'ccc',
+        color: 'orange'
+    },
+    {
+        text: 'ddd',
+        color: 'red'
+    }
+]
+
+render(<List list={list}/>, document.getElementById('app'));
+

@@ -24,3 +24,19 @@ export class Component {
 
     componentWillUnmount() {}
 }
+
+class LoginForm extends Component{
+    constructor() {
+        super();
+        this.state={
+            username:'',
+            pwd:''
+        }
+    }
+
+    handleUpdate(){
+
+    }
+
+}
+

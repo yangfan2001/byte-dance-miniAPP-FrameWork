@@ -36,3 +36,38 @@ class Demo extends Component {
 }
 
 render(createElement(Demo, null), document.getElementById('app'));
+
+function Item(props) {
+  return createElement("li", {
+    className: "item",
+    style: props.style,
+    onClick: props.onClick
+  }, props.children);
+}
+
+function List(props) {
+  return createElement("ul", {
+    className: "list"
+  }, props.list.map((item, index) => {
+    return createElement(Item, {
+      style: {
+        background: item.color
+      },
+      onClick: () => alert(item.text)
+    }, item.text);
+  }));
+}
+
+const list = [{
+  text: 'aaa',
+  color: 'blue'
+}, {
+  text: 'ccc',
+  color: 'orange'
+}, {
+  text: 'ddd',
+  color: 'red'
+}];
+render(createElement(List, {
+  list: list
+}), document.getElementById('app'));
