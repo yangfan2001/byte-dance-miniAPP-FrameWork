@@ -1,4 +1,4 @@
-import { Component } from './component.js';
+import { Component, Count } from './component.js';
 import { render, createElement } from "./render.js";
 
 class Demo extends Component {
@@ -71,3 +71,4 @@ const list = [{
 render(createElement(List, {
   list: list
 }), document.getElementById('app'));
+render(createElement(Count, null), document.getElementById('app'));

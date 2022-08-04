@@ -1,6 +1,5 @@
-import {Component} from './component.js'
+import {Component,Count} from './component.js'
 import {render,createElement} from "./render.js";
-
 
 class Demo extends Component{
     constructor(props) {
@@ -60,4 +59,6 @@ const list = [
 ]
 
 render(<List list={list}/>, document.getElementById('app'));
+
+render(<Count/>, document.getElementById('app'));
 

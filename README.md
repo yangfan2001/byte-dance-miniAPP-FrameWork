@@ -6,7 +6,7 @@
 
 1、利用babel对jsx进行编译
 
-2、通过jsx生成的vdom来操作dom进行render，可以通过类似dsl设计实现自定义组件（这里简单实现了一个登录框）
+2、通过jsx生成的vdom来操作dom进行render，可以通过类似dsl设计实现自定义组件（这里简单实现了一个demo组件）
 
 3、实现简单的diff算法来进行dom的更新
 
@@ -27,6 +27,10 @@ npm stall，npm run build后，运行index.html
 ### 使用
 
 npm stall，npm run build，运行dist/index.html
+
+## More
+
+整个过程学到了很多，但是由于本身js就不是很熟悉，因此也花了许多时间学习前端相关的其他知识。前面花了很多时间也还是没有彻底研究透小程序的双线程如何实现。最后还看到了[Voe](https://github.com/sxzxiaofeng/voe)这个简洁基于Vue语法实现的框架，并在createlement函数里面借鉴了其通过WbWorker传递函数的写法。可惜时间和能力有限，没有完全透彻的学习这一框架。
 
 
 
